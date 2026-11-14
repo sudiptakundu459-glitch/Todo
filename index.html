@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f6fa">
+  <title>Todo — Make today count</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Todo home">
+        <span class="brand-mark" aria-hidden="true">✓</span>
+        <span>todo<span class="brand-period">.</span></span>
+      </a>
+      <span class="today" id="today"></span>
+    </header>
+
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">YOUR PERSONAL SPACE</p>
+      <h1 id="page-title">Make today<br><span>count.</span></h1>
+      <p class="subtitle">A little progress adds up. What’s on your mind?</p>
+    </section>
+
+    <section class="todo-card" aria-label="Your tasks">
+      <form class="add-form" id="add-form">
+        <label class="sr-only" for="task-input">Add a task</label>
+        <span class="add-icon" aria-hidden="true">+</span>
+        <input id="task-input" type="text" maxlength="160" placeholder="Add a task..." autocomplete="off" required>
+        <button class="add-button" type="submit">Add task <span aria-hidden="true">↗</span></button>
+      </form>
+
+      <div class="list-header">
+        <h2 id="list-heading">Your tasks <span id="task-count">0</span></h2>
+        <div class="filters" role="group" aria-label="Filter tasks">
+          <button class="filter active" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter" type="button" data-filter="active" aria-pressed="false">Active</button>
+          <button class="filter" type="button" data-filter="completed" aria-pressed="false">Done</button>
+        </div>
+      </div>
+
+      <ul class="task-list" id="task-list" aria-labelledby="list-heading"></ul>
+      <div class="empty-state" id="empty-state">
+        <span class="empty-icon" aria-hidden="true">✦</span>
+        <p class="empty-title">A fresh start.</p>
+        <p class="empty-copy">Add your first task and get things moving.</p>
+      </div>
+
+      <footer class="card-footer">
+        <span id="remaining-count">0 tasks left</span>
+        <button class="clear-button" id="clear-completed" type="button" disabled>Clear completed</button>
+      </footer>
+    </section>
+    <p class="footnote">Small steps. Big things.</p>
+    <p class="storage-notice" id="storage-notice" role="status" hidden></p>
+  </main>
+</body>
+</html>
